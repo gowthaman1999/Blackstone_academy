@@ -58,7 +58,7 @@ export default function Comparison() {
   ];
 
   return (
-    <section id="comparison" className="py-24 relative overflow-hidden bg-light-bg-1 text-slate-900 border-b border-slate-100">
+    <section id="comparison" className="py-24 relative overflow-hidden bg-light-bg-1/80 backdrop-blur-sm text-slate-900 border-b border-slate-100">
       <div className="absolute top-1/2 left-1/4 w-96 h-96 rounded-full bg-primary-blue/5 blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -77,7 +77,7 @@ export default function Comparison() {
         </div>
 
         {/* Matrix Card */}
-        <div className="bg-white border border-slate-200/60 rounded-3xl overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.02)]">
+        <div className="bg-white/85 border border-slate-200/60 rounded-3xl overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.02)] relative z-10 backdrop-blur-sm">
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse min-w-[800px]">
               <thead>
@@ -169,7 +169,7 @@ export default function Comparison() {
         </div>
 
         {/* Note warning */}
-        <div className="mt-8 flex gap-3 p-4 rounded-2xl bg-amber-500/5 border border-amber-500/10 max-w-2xl mx-auto items-start text-xs text-amber-700 font-medium">
+        <div className="mt-8 flex gap-3 p-4 rounded-2xl bg-amber-500/5 border border-amber-500/10 max-w-2xl mx-auto items-start text-xs text-amber-700 font-medium relative z-10">
           <ShieldAlert className="w-5 h-5 shrink-0 mt-0.5" />
           <p>
             Legacy software tools charge hidden fees for updates, hosting, and API keys. BlackStone AI provides unified hosting, secure updates, and built-in integration support out of the box with zero third-party commissions.

@@ -27,7 +27,7 @@ export default function Integrations() {
   ];
 
   return (
-    <section id="integrations" className="py-24 relative overflow-hidden bg-light-bg-2 text-slate-900 border-b border-slate-100">
+    <section id="integrations" className="py-24 relative overflow-hidden bg-light-bg-2/80 backdrop-blur-sm text-slate-900 border-b border-slate-100">
       <div className="absolute top-1/2 right-0 w-80 h-80 rounded-full bg-primary-blue/5 blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -61,7 +61,7 @@ export default function Integrations() {
               return (
                 <div
                   key={idx}
-                  className="bg-white border border-slate-100 p-5 rounded-2xl flex flex-col justify-between h-32 hover:scale-[1.02] hover:border-slate-300 hover:shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition-all shadow-sm cursor-default"
+                  className="bg-white/85 border border-slate-100 p-5 rounded-2xl flex flex-col justify-between h-32 hover:scale-[1.02] hover:border-slate-300 hover:shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition-all shadow-sm cursor-default relative z-10 backdrop-blur-sm"
                 >
                   <div className={`w-9 h-9 rounded-xl bg-gradient-to-tr ${item.color} flex items-center justify-center text-white shadow-sm`}>
                     <Icon className="w-4.5 h-4.5" />

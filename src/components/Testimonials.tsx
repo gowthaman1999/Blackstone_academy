@@ -64,7 +64,7 @@ export default function Testimonials() {
   const current = testimonials[activeIndex];
 
   return (
-    <section className="py-24 relative overflow-hidden bg-light-bg-2 text-slate-900 border-b border-slate-100">
+    <section id="testimonials" className="py-24 relative overflow-hidden bg-light-bg-2/80 backdrop-blur-sm text-slate-900 border-b border-slate-100">
       <div className="absolute top-10 right-10 w-80 h-80 rounded-full bg-primary-blue/5 blur-[120px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-6 relative z-10">
@@ -99,7 +99,7 @@ export default function Testimonials() {
         </div>
 
         {/* Carousel Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-white border border-slate-100 rounded-3xl p-8 sm:p-12 shadow-[0_8px_30px_rgba(0,0,0,0.03)] relative min-h-[380px]">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-white/85 border border-slate-100 rounded-3xl p-8 sm:p-12 shadow-[0_8px_30px_rgba(0,0,0,0.03)] relative min-h-[380px] z-10 backdrop-blur-sm">
           {/* Quote & Profile */}
           <div className="lg:col-span-8 flex flex-col justify-between h-full gap-8">
             <p className="font-sans font-light text-lg sm:text-xl text-slate-800 leading-relaxed italic">

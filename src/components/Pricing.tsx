@@ -73,7 +73,7 @@ export default function Pricing() {
   };
 
   return (
-    <section id="pricing" className="py-24 relative overflow-hidden bg-light-bg-1 text-slate-900 border-b border-slate-100">
+    <section id="pricing" className="py-24 relative overflow-hidden bg-light-bg-1/80 backdrop-blur-sm text-slate-900 border-b border-slate-100">
       <div className="absolute top-1/3 right-1/4 w-96 h-96 rounded-full bg-primary-blue/5 blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -128,7 +128,7 @@ export default function Pricing() {
                 className={`rounded-3xl p-8 flex flex-col justify-between relative transition-all duration-300 hover:scale-[1.01] ${
                   isProfessional
                     ? "bg-slate-950 text-white border border-slate-900 shadow-2xl scale-102 z-10"
-                    : "bg-white border border-slate-200/60 text-slate-900 shadow-[0_8px_30px_rgba(0,0,0,0.015)]"
+                    : "bg-white/85 border border-slate-200/60 text-slate-900 shadow-[0_8px_30px_rgba(0,0,0,0.015)] relative z-10 backdrop-blur-sm"
                 }`}
               >
                 {isProfessional && (

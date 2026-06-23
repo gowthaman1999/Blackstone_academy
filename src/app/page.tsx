@@ -13,15 +13,19 @@ import InteractiveDemo from "@/components/InteractiveDemo";
 import Security from "@/components/Security";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import KnowledgeCore from "@/components/KnowledgeCore";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen bg-dark-bg-1 text-slate-100 selection:bg-primary-blue selection:text-white">
+    <div className="flex flex-col min-h-screen bg-dark-bg-1 text-slate-100 selection:bg-brand-blue selection:text-white relative">
+      {/* Fixed 3D storytelling object in background */}
+      <KnowledgeCore />
+
       {/* Sticky Navigation Header */}
       <Header />
 
       {/* Main Sections Scroll Flow */}
-      <main className="flex-1">
+      <main className="flex-1 relative z-10">
         {/* Full-Screen 3D Hero Section */}
         <Hero />
 
@@ -43,11 +47,11 @@ export default function Home() {
         {/* Customer Success Stories Carousel */}
         <Testimonials />
 
-        {/* Dynamic Pricing Tiers */}
-        <Pricing />
-
         {/* Role-Based Security Section */}
         <Security />
+
+        {/* Dynamic Pricing Tiers */}
+        <Pricing />
 
         {/* Tailored Consultation Contact Section */}
         <ContactSection />

@@ -2,11 +2,14 @@
 
 import React, { useState, useEffect } from "react";
 import { ChevronDown, Menu, X, Sparkles, Users, BookOpen, Video, CreditCard, ShieldCheck } from "lucide-react";
+import { useTheme } from "@/context/ThemeContext";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const { theme } = useTheme();
+  const isLight = theme === "light";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -57,20 +60,21 @@ export default function Header() {
         className={`w-full max-w-5xl rounded-full transition-all duration-300 pointer-events-auto ${
           scrolled
             ? "bg-white/85 border border-slate-200/80 shadow-[0_8px_30px_rgba(0,0,0,0.06)] py-2.5 px-6"
-            : "bg-[#050B18]/65 border border-white/10 shadow-[0_12px_40px_rgba(0,0,0,0.25)] py-3 px-7"
+            : isLight
+              ? "bg-white/65 border border-slate-200/50 shadow-[0_12px_40px_rgba(0,0,0,0.05)] py-3 px-7"
+              : "bg-[#050B18]/65 border border-white/10 shadow-[0_12px_40px_rgba(0,0,0,0.25)] py-3 px-7"
         } backdrop-blur-md`}
       >
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2.5 group shrink-0">
-            <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-primary-blue to-sec-cyan flex items-center justify-center shadow-md">
-              <Sparkles className="w-4 h-4 text-white" />
-            </div>
-            <span className={`font-display font-extrabold text-base tracking-tight transition-colors ${
-              scrolled ? "text-slate-900" : "text-white"
-            }`}>
-              BlackStone AI
-            </span>
+          <a href="#" className="flex items-center group shrink-0">
+            <img
+              src="/logo.png"
+              alt="Blackstone Infomatics"
+              className={`h-8 w-auto object-contain transition-all duration-300 ${
+                scrolled || isLight ? "" : "invert brightness-125"
+              }`}
+            />
           </a>
 
           {/* Center Desktop Nav */}
@@ -86,7 +90,7 @@ export default function Header() {
                   href={link.href}
                   onClick={(e) => handleScrollTo(e, link.href)}
                   className={`text-[13px] font-semibold transition-colors flex items-center gap-1 hover:text-primary-blue cursor-pointer ${
-                    scrolled ? "text-slate-600" : "text-slate-200"
+                    scrolled || isLight ? "text-slate-600" : "text-slate-200"
                   }`}
                 >
                   <span>{link.name}</span>
@@ -98,7 +102,7 @@ export default function Header() {
                 {/* Dropdown Panel */}
                 {link.hasDropdown && dropdownOpen && (
                   <div className={`absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[440px] rounded-2xl border p-4 shadow-xl backdrop-blur-xl transition-all duration-300 animate-fade-in z-50 ${
-                    scrolled
+                    scrolled || isLight
                       ? "bg-white/95 border-slate-200 text-slate-800"
                       : "bg-[#050B18]/95 border-white/10 text-white"
                   }`}>
@@ -109,7 +113,7 @@ export default function Header() {
                           href={item.href}
                           onClick={(e) => handleScrollTo(e, item.href)}
                           className={`flex items-start gap-3 p-2 rounded-xl transition-all ${
-                            scrolled ? 'hover:bg-slate-100/80 text-slate-700 hover:text-slate-900' : 'hover:bg-white/5 text-slate-300 hover:text-white'
+                            scrolled || isLight ? 'hover:bg-slate-100/80 text-slate-700 hover:text-slate-900' : 'hover:bg-white/5 text-slate-300 hover:text-white'
                           }`}
                         >
                           <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-primary-blue to-sec-cyan flex items-center justify-center text-white shrink-0 mt-0.5 shadow-sm">
@@ -134,7 +138,7 @@ export default function Header() {
               href="#demo"
               onClick={(e) => handleScrollTo(e, "#demo")}
               className={`text-[13px] font-semibold hover:text-primary-blue transition-colors ${
-                scrolled ? "text-slate-600" : "text-slate-200"
+                scrolled || isLight ? "text-slate-600" : "text-slate-200"
               }`}
             >
               Sign in
@@ -153,7 +157,7 @@ export default function Header() {
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className={`p-1.5 rounded-full border transition-colors ${
-                scrolled 
+                scrolled || isLight 
                   ? "border-slate-200 text-slate-700 hover:bg-slate-50" 
                   : "border-white/10 text-white hover:bg-white/5"
               }`}
@@ -166,7 +170,7 @@ export default function Header() {
         {/* Mobile Drawer */}
         {mobileMenuOpen && (
           <div className={`md:hidden absolute top-full left-0 right-0 mt-3 p-5 rounded-2xl border animate-fade-in flex flex-col gap-4 shadow-xl ${
-            scrolled
+            scrolled || isLight
               ? "bg-white border-slate-200 text-slate-900"
               : "bg-[#050B18] border-white/10 text-white"
           }`}>
@@ -177,7 +181,7 @@ export default function Header() {
                   href={link.href}
                   onClick={(e) => handleScrollTo(e, link.href)}
                   className={`text-sm font-semibold flex items-center justify-between py-1.5 border-b border-transparent hover:border-primary-blue transition-colors ${
-                    scrolled ? "text-slate-800" : "text-slate-200"
+                    scrolled || isLight ? "text-slate-800" : "text-slate-200"
                   }`}
                 >
                   <span>{link.name}</span>
@@ -189,7 +193,7 @@ export default function Header() {
                 href="#demo"
                 onClick={(e) => handleScrollTo(e, "#demo")}
                 className={`text-center text-xs font-semibold py-2.5 rounded-full border ${
-                  scrolled ? "border-slate-200 text-slate-700 hover:bg-slate-50" : "border-white/10 text-slate-200 hover:bg-white/5"
+                  scrolled || isLight ? "border-slate-200 text-slate-700 hover:bg-slate-50" : "border-white/10 text-slate-200 hover:bg-white/5"
                 }`}
               >
                 Sign in

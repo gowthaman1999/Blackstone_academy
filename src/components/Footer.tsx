@@ -67,13 +67,12 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 pb-12 grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
         {/* Brand Column */}
         <div className="md:col-span-4 flex flex-col gap-6">
-          <a href="#" className="flex items-center gap-2.5 group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-primary-blue to-sec-cyan flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
-              <Sparkles className="w-5 h-5 text-white" />
-            </div>
-            <span className="font-display font-bold text-xl tracking-tight text-foreground">
-              BlackStone AI<span className="text-sec-cyan">.</span>
-            </span>
+          <a href="#" className="flex items-center group">
+            <img 
+              src="/logo.png" 
+              alt="Blackstone Infomatics" 
+              className="h-10 w-auto object-contain invert brightness-125" 
+            />
           </a>
           <p className="text-xs text-foreground/60 leading-relaxed font-sans font-light max-w-sm">
             BlackStone AI is the world's most premium ERP & LMS suite designed to power online academies, Quran studies, coaching centers, and modern prep schools.

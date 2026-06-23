@@ -77,7 +77,7 @@ export default function Security() {
   ];
 
   return (
-    <section id="security" className="py-24 relative overflow-hidden bg-light-bg-1 text-slate-900 border-b border-slate-100">
+    <section id="security" className="py-24 relative overflow-hidden bg-light-bg-1/80 backdrop-blur-sm text-slate-900 border-b border-slate-100">
       <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-primary-blue/5 blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -99,7 +99,7 @@ export default function Security() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           
           {/* Role-Based Controls (Left) */}
-          <div className="lg:col-span-7 bg-white border border-slate-200/60 shadow-[0_8px_30px_rgba(0,0,0,0.02)] p-8 rounded-3xl flex flex-col justify-between">
+          <div className="lg:col-span-7 bg-white/85 border border-slate-200/60 shadow-[0_8px_30px_rgba(0,0,0,0.02)] p-8 rounded-3xl flex flex-col justify-between relative z-10 backdrop-blur-sm">
             <div>
               <div className="flex justify-between items-center mb-6">
                 <h4 className="font-display font-bold text-lg text-slate-900">Role-Based Access Control (RBAC)</h4>
@@ -156,7 +156,7 @@ export default function Security() {
           <div className="lg:col-span-5 flex flex-col gap-8">
             
             {/* MFA Switch Card */}
-            <div className="bg-white border border-slate-200/60 shadow-[0_8px_30px_rgba(0,0,0,0.02)] p-8 rounded-3xl flex-1 flex flex-col justify-between">
+            <div className="bg-white/85 border border-slate-200/60 shadow-[0_8px_30px_rgba(0,0,0,0.02)] p-8 rounded-3xl flex-1 flex flex-col justify-between relative z-10 backdrop-blur-sm">
               <div>
                 <h4 className="font-display font-bold text-lg text-slate-900 mb-3 flex items-center gap-2">
                   <Key className="w-5 h-5 text-primary-blue" /> Authentication Protection
@@ -199,7 +199,7 @@ export default function Security() {
             </div>
 
             {/* Infrastructure Card */}
-            <div className="bg-white border border-slate-200/60 shadow-[0_8px_30px_rgba(0,0,0,0.02)] p-8 rounded-3xl flex-1 flex flex-col justify-between">
+            <div className="bg-white/85 border border-slate-200/60 shadow-[0_8px_30px_rgba(0,0,0,0.02)] p-8 rounded-3xl flex-1 flex flex-col justify-between relative z-10 backdrop-blur-sm">
               <div>
                 <h4 className="font-display font-bold text-lg text-slate-900 mb-3 flex items-center gap-2">
                   <Server className="w-5 h-5 text-primary-blue" /> Cloud Infrastructure

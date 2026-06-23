@@ -138,7 +138,7 @@ export default function Features() {
       : features.filter((f) => f.category === activeCategory);
 
   return (
-    <section id="features" className="py-24 relative overflow-hidden bg-light-bg-1 text-slate-900 border-y border-slate-100">
+    <section id="features" className="py-24 relative overflow-hidden bg-light-bg-1/80 backdrop-blur-sm text-slate-900 border-y border-slate-100">
       {/* Background glowing decorations */}
       <div className="absolute top-1/2 left-0 w-80 h-80 rounded-full bg-primary-blue/5 blur-[120px] pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-80 h-80 rounded-full bg-primary-indigo/5 blur-[120px] pointer-events-none" />
@@ -182,7 +182,7 @@ export default function Features() {
             return (
               <div
                 key={index}
-                className="bg-white border border-slate-100 rounded-3xl p-8 shadow-[0_8px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.06)] hover:border-slate-200/80 transition-all flex flex-col justify-between"
+                className="bg-white/85 border border-slate-100 rounded-3xl p-8 shadow-[0_8px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.06)] hover:border-slate-200/80 hover:scale-[1.01] transition-all flex flex-col justify-between relative z-10 backdrop-blur-sm"
               >
                 <div>
                   {/* Icon Block */}

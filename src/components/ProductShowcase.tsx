@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import CountUp from "./CountUp";
 import {
   User,
   GraduationCap,
@@ -215,22 +216,30 @@ export default function ProductShowcase() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               <div className="bg-foreground/5 border border-foreground/10 rounded-2xl p-4 flex flex-col justify-between">
                 <span className="text-[10px] text-foreground/50 uppercase font-semibold">Total Students</span>
-                <p className="text-2xl font-black text-foreground mt-1">4,282</p>
+                <p className="text-2xl font-black text-foreground mt-1">
+                  <CountUp end={4282} />
+                </p>
                 <span className="text-[9px] text-green-500 font-bold mt-1">+140 this month</span>
               </div>
               <div className="bg-foreground/5 border border-foreground/10 rounded-2xl p-4 flex flex-col justify-between">
                 <span className="text-[10px] text-foreground/50 uppercase font-semibold">Staff Members</span>
-                <p className="text-2xl font-black text-foreground mt-1">114</p>
+                <p className="text-2xl font-black text-foreground mt-1">
+                  <CountUp end={114} />
+                </p>
                 <span className="text-[9px] text-foreground/40 mt-1">12 pending hire</span>
               </div>
               <div className="bg-foreground/5 border border-foreground/10 rounded-2xl p-4 flex flex-col justify-between">
                 <span className="text-[10px] text-foreground/50 uppercase font-semibold">Active Classes</span>
-                <p className="text-2xl font-black text-foreground mt-1">482</p>
+                <p className="text-2xl font-black text-foreground mt-1">
+                  <CountUp end={482} />
+                </p>
                 <span className="text-[9px] text-sec-cyan font-bold mt-1">98.9% attendance</span>
               </div>
               <div className="bg-foreground/5 border border-foreground/10 rounded-2xl p-4 flex flex-col justify-between">
                 <span className="text-[10px] text-foreground/50 uppercase font-semibold">Total ARR</span>
-                <p className="text-2xl font-black text-foreground mt-1">$94,520</p>
+                <p className="text-2xl font-black text-foreground mt-1">
+                  <CountUp end={94520} prefix="$" />
+                </p>
                 <span className="text-[9px] text-green-500 font-bold mt-1">+12.4% MoM</span>
               </div>
             </div>
